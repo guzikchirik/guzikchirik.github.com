@@ -15,6 +15,6 @@ myButton.onclick = function() {
   setUserName();
 }
 
-var years = prompt('Сколько вам лет?', 100);
+//var years = prompt('Сколько вам лет?', 100);
 
-alert('Вам ' + years + ' лет!')
+//alert('Вам ' + years + ' лет!')
