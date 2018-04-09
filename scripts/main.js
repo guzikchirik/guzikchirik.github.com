@@ -15,6 +15,17 @@ myButton.onclick = function() {
   setUserName();
 }
 
-//var years = prompt('Сколько вам лет?', 100);
+var show_search_button = document.getElementById('show_search');
+	show_search_button.onclick = function() {
+		var search_block =  document.getElementById('expected_element');
+		var computedStyle = getComputedStyle(search_block);			 
+		if(computedStyle.display === 'none') {
+			search_block.style.display="block";		
+		} else {
+			search_block.style.display="none";
+		}
+	}
+	
+var years = prompt('Сколько вам лет?', 100);
 
 //alert('Вам ' + years + ' лет!')

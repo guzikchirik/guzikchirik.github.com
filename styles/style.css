@@ -39,3 +39,8 @@ img {
   display: block;
   margin: 0 auto;
 }
+
+#expected_element{
+	font: 12pt/10pt sans-serif; 	
+	display:none;	
+}
