@@ -24,8 +24,4 @@ var show_search_button = document.getElementById('show_search');
 		} else {
 			search_block.style.display="none";
 		}
-	}
-	
-var years = prompt('Сколько вам лет?', 100);
-
-//alert('Вам ' + years + ' лет!')
+	}	
