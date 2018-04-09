@@ -19,9 +19,9 @@ var show_search_button = document.getElementById('show_search');
 	show_search_button.onclick = function() {
 		var search_block =  document.getElementById('expected_element');
 		var computedStyle = getComputedStyle(search_block);			 
-		if(computedStyle.display === 'none') {
-			search_block.style.display="block";		
+		if(computedStyle.display === 'none') {		
+			setTimeout(function() { search_block.style.display="block" }, 3000);	
 		} else {
-			search_block.style.display="none";
+			setTimeout(function() { search_block.style.display="none" }, 3000);			
 		}
 	}	
