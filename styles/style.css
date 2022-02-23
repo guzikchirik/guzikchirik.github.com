@@ -44,3 +44,18 @@ img {
 	font: 12pt/10pt sans-serif; 	
 	display:none;	
 }
+
+.triangleForm {
+border: 1px solid black;
+padding: 0 0px 20px 20px;
+}
+
+.triangle-icon {
+max-width: 50%;
+  height: auto;
+}
+
+.message {
+border: 1px solid black;
+padding: 0 0px 20px 20px;
+}

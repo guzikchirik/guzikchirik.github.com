@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Triangle testing</title>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <link href="../styles/style.css" rel="stylesheet" type="text/css">
+  <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico">
+</head>
+<!--<body onload="drawTriangle();"> for draw triangle-->
+<body>
+<img src="../images/triangles/triangle-0.png" alt="The Firefox logo: a flaming fox surrounding the Earth." id = 'logo' class="triangle-icon">
+<p>Triangle testing</p>
+<p>You need to test a program that determines the type of a triangle from its three sides. Each side is specified in a separate text field.</p>
+
+<div class="triangleForm">
+    <input type="text" id="sideA" name="sideA">
+    <input type="text" id="sideB" name="sideB">
+    <input type="text" id="sideC" name="sideC">
+
+    <button type="button" id="showBtn">Show</button>
+
+
+<!--    <div id="triangle" class="triangleShow">-->
+<!--      <canvas id="canvas" width="150" height="150"></canvas>-->
+<!--    </div>-->
+
+</div>
+
+<div class="message">
+  <label>Message:</label>
+  <p id="msg"></p>
+</div>
+
+<a href="../index.html" id='back'>Back home</a>
+
+<script defer src="../scripts/triangle.js"></script>
+</body>
+</html>
+
