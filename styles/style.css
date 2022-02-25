@@ -15,15 +15,37 @@ p, li {
   letter-spacing: 1px;
 }
 
+button {
+  background-color: #FF7600;
+  position: relative;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    text-shadow: 0 -1px 1px #cc5500;
+    user-select: none;
+    padding: .8em 2em;
+    outline: none;
+    border-radius: 3px;
+    background-size: 100% 100%, auto;
+    background-position: 50% 50%;
+    transition: 0.2s;
+}
+button:hover {
+  background-size: 140% 100%, auto;
+}
+button:active {
+  top: 1px;
+  color: #A64D00;
+}
 
 html {
-  background-color: #00539F;
+  background-color: #006064;
 }
 
 body {
   width: 600px;
   margin: 0 auto;
-  background-color: #FF9500;
+  background-color: #5DC8CD;
   padding: 0 20px 20px 20px;
   border: 5px solid black;
 }
@@ -50,12 +72,31 @@ border: 1px solid black;
 padding: 0 0px 20px 20px;
 }
 
+.image-wrapper{
+  height: 250px;
+}
+
 .triangle-icon {
-max-width: 50%;
-  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  height: 100%;
 }
 
 .message {
 border: 1px solid black;
 padding: 0 0px 20px 20px;
+}
+
+.msg-error{
+padding: 0 0px 20px 20px;
+text-align: center;
+color: red;
+}
+
+.msg-correct{
+padding: 0 0px 20px 20px;
+text-align: center;
+color: green;
 }
