@@ -9,6 +9,11 @@ h1 {
   text-align: center;
 }
 
+h2 {
+  font-size: 15px;
+  text-align: center;
+}
+
 p, li {
   font-size: 16px;  
   line-height: 2;
@@ -40,14 +45,6 @@ button:active {
 
 html {
   background-color: #006064;
-}
-
-body {
-  width: 600px;
-  margin: 0 auto;
-  background-color: #5DC8CD;
-  padding: 0 20px 20px 20px;
-  border: 5px solid black;
 }
 
 h1 {
@@ -99,4 +96,35 @@ color: red;
 padding: 0 0px 20px 20px;
 text-align: center;
 color: green;
+}
+
+.container{
+border: 1px solid red;
+}
+
+.left{
+margin: 0 auto;
+background-color: #5DC8CD;
+  padding: 0 20px 20px 20px;
+  border: 5px solid black;
+  width: 600px;
+display: block;
+}
+
+.sidebar{
+display: block;
+border: 1px solid red;
+background-color: #5DC8CD;
+padding: 0 20px 20px 20px;
+  border: 5px solid black;
+  float:right;
+}
+
+.case{
+}
+
+.bug{
+}
+
+.message{
 }

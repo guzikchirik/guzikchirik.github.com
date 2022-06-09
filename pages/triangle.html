@@ -9,34 +9,60 @@
 </head>
 <!--<body onload="drawTriangle();"> for draw triangle-->
 <body>
-<div class="image-wrapper">
-  <img src="../images/triangles/triangle-0.png" alt="The Firefox logo: a flaming fox surrounding the Earth." id = 'logo' class="triangle-icon">
-</div>
-  <p>Triangle testing</p>
-<p>You need to test a program that determines the type of a triangle from its three sides. Each side is specified in a separate text field.</p>
+<div class="container">
 
-<div class="triangleForm">
-    <input type="text" id="sideA" name="sideA">
-    <input type="text" id="sideB" name="sideB">
-    <input type="text" id="sideC" name="sideC">
+  <div class="sidebar">
+    <div id="fBugs" class="foundBugs">
+      <h2>Found Bugs:</h2>
+      <p id="bugsDesc"></p>
 
-    <button type="button" id="showBtn">Show</button>
+    </div>
+    <div id="exScen" class="execScenarios" >
+      <h2>Executed scenarios:</h2>
+      <p id="scenariosDesc"></p>
+    </div>
+  </div>
+
+  <div class="left">
+    <div class="image-wrapper">
+      <img src="../images/triangles/triangle-0.png" alt="The Firefox logo: a flaming fox surrounding the Earth." id = 'logo' class="triangle-icon">
+    </div>
+      <p>Triangle testing</p>
+      <p>You need to test a program that determines the type of a triangle from its three sides. Each side is specified in a separate text field.</p>
+
+    <div class="triangleForm">
+      <label>sideA:</label>
+        <input type="text" id="sideA" name="sideA">
+      <br>
+      <label>sideB:</label>
+        <input type="text" id="sideB" name="sideB">
+      <br>
+      <label>sideC:</label>
+        <input type="text" id="sideC" name="sideC">
+      <br>
+        <button type="button" id="showBtn">Show</button>
 
 
 <!--    <div id="triangle" class="triangleShow">-->
 <!--      <canvas id="canvas" width="150" height="150"></canvas>-->
 <!--    </div>-->
+    </div>
+
+
+    <div class="message">
+      <label>Message:</label>
+      <p id="msg"></p>
+    </div>
+
+    <a href="../index.html" id='back'>Back home</a>
+  </div>
+
 
 </div>
 
-<div class="message">
-  <label>Message:</label>
-  <p id="msg"></p>
-</div>
-
-<a href="../index.html" id='back'>Back home</a>
 
 <script defer src="../scripts/triangle.js"></script>
+
 </body>
 </html>
 

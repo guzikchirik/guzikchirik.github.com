@@ -70,6 +70,12 @@ function checkSidesOfTriangle(side_a, side_b, side_c) {
     return true;
 }
 
+function writeBugs() {
+}
+
+function writeScenarios() {
+}
+
 function drawTriangle() {
   var canvas = document.getElementById('canvas');
   if (canvas.getContext) {
