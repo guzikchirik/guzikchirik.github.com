@@ -1,3 +1,4 @@
+/*
 html {
   font-size: 10px;
   font-family: 'Open Sans', sans-serif;
@@ -127,4 +128,33 @@ padding: 0 20px 20px 20px;
 }
 
 .message{
+}
+*/
+
+body {
+  margin: 0;
+}
+
+header {
+  background: #B0DDDD;
+  height: 70px;
+}
+
+.main {
+  background: #F9F9F9;
+  height: 300px;
+}
+
+footer {
+  background: #DCCEC8;
+  height: 70px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1024px;
+  padding: 0 15px;
+  margin: 0 auto;
+  background: #FFD0AB;
+  height: 100%;
 }

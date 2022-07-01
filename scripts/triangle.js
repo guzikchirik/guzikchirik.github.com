@@ -23,22 +23,22 @@ function detectTriangle(side_a, side_b, side_c) {
     }
 
     if(a===b && b===c) {
-      myImage.setAttribute('src', '../images/triangles/triangle-1.png');
+      myImage.setAttribute('src', '../../images/triangles/triangle-1.png');
       message.innerHTML = "It's an equilateral triangle!";
       message.className = "msg-correct";
       writeScenarios("Positive case: 'equilateral' triangle")
     } else if ((a==b && a!=c) || (b==c && b!=a) || (a==c && a!=b)) {
-      myImage.setAttribute('src', '../images/triangles/triangle-2.png');
+      myImage.setAttribute('src', '../../images/triangles/triangle-2.png');
       message.innerHTML = "It's an isosceles triangle!";
       message.className = "msg-correct";
       writeScenarios("Positive case: 'isosceles' triangle")
     } else if ((Math.sqrt((a * a) + (b * b))==c) || (Math.sqrt((b * b) + (c * c))==a)) {  //here bug!!!  -->  3, 5, 4
-      myImage.setAttribute('src', '../images/triangles/triangle-4.png');
+      myImage.setAttribute('src', '../../images/triangles/triangle-4.png');
       message.innerHTML = "It's an right angled triangle!";
       message.className = "msg-correct";
       writeScenarios("Positive case: 'right angled' triangle")
     } else {
-      myImage.setAttribute('src', '../images/triangles/triangle-3.png');
+      myImage.setAttribute('src', '../../images/triangles/triangle-3.png');
       message.innerHTML = "It's an scalene triangle!"; // here bug color is not set to green after red
       writeScenarios("Positive case: 'scalene' triangle")
     }
@@ -48,7 +48,7 @@ function checkSidesOfTriangle(side_a, side_b, side_c) {
     var myImage = document.querySelector('img');
     var message = document.getElementById('msg');
     if(side_a.indexOf('script') !== -1 || side_b.indexOf('script') !== -1) { // not all fields and not all injections are taken into account
-          myImage.setAttribute('src', '../images/triangles/triangle-0.png');
+          myImage.setAttribute('src', '../../images/triangles/triangle-0.png');
           message.innerHTML = "Sql-injections are forbidden!";
           message.className = "msg-error";
           return false;
@@ -90,7 +90,7 @@ function checkSidesOfTriangle(side_a, side_b, side_c) {
 function writeErrorMsg(msg) {
   var myImage = document.querySelector('img');
   var message = document.getElementById('msg');
-  myImage.setAttribute('src', '../images/triangles/triangle-0.png');
+  myImage.setAttribute('src', '../../images/triangles/triangle-0.png');
   message.className = "msg-error";
   message.innerHTML = msg;
 }
