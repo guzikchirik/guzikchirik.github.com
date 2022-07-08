@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Instructions</title>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href="../styles/style.css" rel="stylesheet" type="text/css">
+	<link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico">	
+  </head>
+  <body>
+    <div>
+      <h1>Set up Jenkins in Docker</h1>
+
+    <code>
+      docker network create jenkins<br>
+      <br>
+      docker volume create jenkins-docker-certs<br>
+      docker volume create jenkins-data<br>
+      <br>
+      docker container run \<br>
+      --name jenkins-docker \<br>
+      --detach \<br>
+      --privileged \<br>
+      --network jenkins \<br>
+      --network-alias docker \<br>
+      --env DOCKER_TLS_CERTDIR=/certs \<br>
+      --volume jenkins-docker-certs:/certs/client \<br>
+      --volume jenkins-data:/var/jenkins_home \<br>
+      --publish 2376:2376 \<br>
+      docker:dind<br>
+      <br>
+      docker container run \<br>
+      --name jenkins-blueocean \<br>
+      --detach \<br>
+      --network jenkins \<br>
+      --env DOCKER_HOST=tcp://docker:2376 \<br>
+      --env DOCKER_CERT_PATH=/certs/client \<br>
+      --env DOCKER_TLS_VERIFY=1 \<br>
+      --publish 8080:8080 \<br>
+      --publish 50000:50000 \<br>
+      --volume jenkins-data:/var/jenkins_home \<br>
+      --volume jenkins-docker-certs:/certs/client:ro \<br>
+      jenkinsci/blueocean<br>
+    </code>
+
+      <p>Так как это Docker, чтобы попасть по этому пути, надо зайти в движущийся контейнер:</p>
+
+      <li>1.	sudo docker exec -it 9e169611c39e /bin/bash</li>
+
+      <p>После входа в контейнер переходим по пути выше. Контейнер внутри ограничен, он собирается только для Jenkins:
+        это значит, что там нет таких привычных приложений как nano и vim. Поэтому будем использовать командe вывода:</p>
+
+      <li>2.	cat < /var/jenkins_home/secrets/initialAdminPassword</li>
+
+      <p>exit</p>
+    </div>
+
+		<a href="../index.html" id='back'>Back home</a>
+
+  </body>
+</html>
+
