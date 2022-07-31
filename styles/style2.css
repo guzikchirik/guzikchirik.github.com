@@ -1,0 +1,160 @@
+
+html {
+  font-size: 10px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+h1 {
+  font-size: 60px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 15px;
+  text-align: center;
+}
+
+p, li {
+  font-size: 16px;  
+  line-height: 2;
+  letter-spacing: 1px;
+}
+
+button {
+  background-color: #FF7600;
+  position: relative;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    text-shadow: 0 -1px 1px #cc5500;
+    user-select: none;
+    padding: .8em 2em;
+    outline: none;
+    border-radius: 3px;
+    background-size: 100% 100%, auto;
+    background-position: 50% 50%;
+    transition: 0.2s;
+}
+button:hover {
+  background-size: 140% 100%, auto;
+}
+button:active {
+  top: 1px;
+  color: #A64D00;
+}
+
+html {
+  background-color: #006064;
+}
+
+h1 {
+  margin: 0;
+  padding: 20px 0;  
+  color: #00539F;
+  text-shadow: 3px 3px 1px black;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+}
+
+#expected_element{
+	font: 12pt/10pt sans-serif; 	
+	display:none;	
+}
+
+.triangleForm {
+border: 1px solid black;
+padding: 0 0px 20px 20px;
+}
+
+.image-wrapper{
+  height: 250px;
+}
+
+.triangle-icon {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  height: 100%;
+}
+
+.message {
+border: 1px solid black;
+padding: 0 0px 20px 20px;
+}
+
+.msg-error{
+padding: 0 0px 20px 20px;
+text-align: center;
+color: red;
+}
+
+.msg-correct{
+padding: 0 0px 20px 20px;
+text-align: center;
+color: green;
+}
+
+.container{
+border: 1px solid red;
+}
+
+.left{
+margin: 0 auto;
+background-color: #5DC8CD;
+  padding: 0 20px 20px 20px;
+  border: 5px solid black;
+  width: 600px;
+display: block;
+}
+
+.sidebar{
+display: block;
+border: 1px solid red;
+background-color: #5DC8CD;
+padding: 0 20px 20px 20px;
+  border: 5px solid black;
+  float:right;
+}
+
+.case{
+}
+
+.bug{
+}
+
+.message{
+}
+
+
+body {
+  margin: 0;
+}
+
+header {
+  background: #B0DDDD;
+  height: 70px;
+}
+
+.main {
+  background: #F9F9F9;
+  height: 300px;
+}
+
+footer {
+  background: #DCCEC8;
+  height: 70px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1024px;
+  padding: 0 15px;
+  margin: 0 auto;
+  background: #FFD0AB;
+  height: 100%;
+}

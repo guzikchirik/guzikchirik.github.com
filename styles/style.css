@@ -1,160 +1,169 @@
-/*
-html {
-  font-size: 10px;
-  font-family: 'Open Sans', sans-serif;
+*,
+::before,
+::after {
+  box-sizing: border-box;
 }
-
-
-h1 {
-  font-size: 60px;
-  text-align: center;
-}
-
-h2 {
-  font-size: 15px;
-  text-align: center;
-}
-
-p, li {
-  font-size: 16px;  
-  line-height: 2;
-  letter-spacing: 1px;
-}
-
-button {
-  background-color: #FF7600;
-  position: relative;
-    font-weight: bold;
-    color: white;
-    text-decoration: none;
-    text-shadow: 0 -1px 1px #cc5500;
-    user-select: none;
-    padding: .8em 2em;
-    outline: none;
-    border-radius: 3px;
-    background-size: 100% 100%, auto;
-    background-position: 50% 50%;
-    transition: 0.2s;
-}
-button:hover {
-  background-size: 140% 100%, auto;
-}
-button:active {
-  top: 1px;
-  color: #A64D00;
-}
-
-html {
-  background-color: #006064;
-}
-
-h1 {
-  margin: 0;
-  padding: 20px 0;  
-  color: #00539F;
-  text-shadow: 3px 3px 1px black;
-}
-
-img {
-  display: block;
-  margin: 0 auto;
-}
-
-#expected_element{
-	font: 12pt/10pt sans-serif; 	
-	display:none;	
-}
-
-.triangleForm {
-border: 1px solid black;
-padding: 0 0px 20px 20px;
-}
-
-.image-wrapper{
-  height: 250px;
-}
-
-.triangle-icon {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-  height: 100%;
-}
-
-.message {
-border: 1px solid black;
-padding: 0 0px 20px 20px;
-}
-
-.msg-error{
-padding: 0 0px 20px 20px;
-text-align: center;
-color: red;
-}
-
-.msg-correct{
-padding: 0 0px 20px 20px;
-text-align: center;
-color: green;
-}
-
-.container{
-border: 1px solid red;
-}
-
-.left{
-margin: 0 auto;
-background-color: #5DC8CD;
-  padding: 0 20px 20px 20px;
-  border: 5px solid black;
-  width: 600px;
-display: block;
-}
-
-.sidebar{
-display: block;
-border: 1px solid red;
-background-color: #5DC8CD;
-padding: 0 20px 20px 20px;
-  border: 5px solid black;
-  float:right;
-}
-
-.case{
-}
-
-.bug{
-}
-
-.message{
-}
-*/
 
 body {
   margin: 0;
+  font-family: 'Montserrat', sans-serif;
 }
 
-header {
-  background: #B0DDDD;
-  height: 70px;
+
+img {
+  width: 100%;
+  height: 100%;
 }
 
-.main {
-  background: #F9F9F9;
-  height: 300px;
+h1,
+h2,
+h3 {
+  margin: 0;
 }
 
-footer {
-  background: #DCCEC8;
-  height: 70px;
+.header {
+  width: 100%;
+  padding: 15px 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 24px;
+  font-weight: 300;
+  color: gray;
+}
+
+.header_logo {
+  color: inherit;
+  text-decoration: none;
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .container {
+  max-width: 1230px;
   width: 100%;
-  max-width: 1024px;
-  padding: 0 15px;
   margin: 0 auto;
-  background: #FFD0AB;
-  height: 100%;
+  padding: 0 15px;
+}
+
+.hero_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax( 290px,1fr));
+  grid-gap: 20px;
+}
+
+.hero_about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero_title {
+  ont-size: 48px;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.hero_subtitle {
+  font-size: 32px;
+  font-weight: 400;
+}
+
+.hero_links {
+  display: flex;
+}
+
+.hero_link {
+  margin-right: 10px;
+  font-size: 30px;
+  color: black;
+  transition: color 0.3s;
+}
+
+.hero_link:hover {
+  color: #4facfe;
+}
+
+.hero_box {
+  max-width: 500px;
+  justify-self: center;
+  overflow: hidden;
+  border: 10px solid #fff;
+
+  background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+
+  animation: ava-animate 5s infinite alternate;
+  box-shadow: 2px 5px 10px rgba(0, 0, 0, .5);
+}
+
+.hero_box-img {
+  animation: ava-bg 3s infinite alternate;
+}
+
+@keyframes ava-animate {
+  0% {
+    border-radius: 30% 70% 70% 30% / 30% 35% 65% 70%;
+  }
+  40% {
+    border-radius: 50% 50% 36% 64% / 30% 80% 20% 70% ;
+  }
+  60% {
+    border-radius: 15% 85% 36% 64% / 69% 42% 58% 31% ;
+  }
+  100% {
+    border-radius: 58% 42% 73% 27% / 39% 62% 38% 61% ;
+  }
+}
+
+@media screen and (max-width: 978px) {
+  .hero {
+    padding-top: 30px;
+  }
+
+  .hero_container {
+    grid-row-gap: 20px;
+  }
+
+  .hero_title {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+
+  .hero_subtitle {
+    font-size: 22px;
+    font-weight: 400;
+  }
+
+  .hero_description {
+    font-size: 14px;
+  }
+
+  .hero_about {
+    text-align: center;
+  }
+
+  .hero_links {
+    justify-content: center;
+  }
+
+  .hero_box {
+    max-width: 350px;
+    justify-self: center;
+  }
+}
+
+@keyframes ava-bg {
+  from {
+    backdrop-filter: hue-rotate(0);
+  }
+  to {
+    backdrop-filter: hue-rotate(90deg);
+  }
 }

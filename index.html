@@ -1,27 +1,99 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
   <head>
     <meta charset="utf-8">
     <title>CEP</title>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link href="styles/style.css" rel="stylesheet" type="text/css">
-	<link rel="shortcut icon" type="image/x-icon" href="./images/favicon.ico">	
+    <link href="styles/nav_menu_style.css" rel="stylesheet" type="text/css">
+	<link rel="shortcut icon" type="image/x-icon" href="./images/favicon.ico">
   </head>
   <body>
-    <h1>Hi there!</h1>
-    <h1>YOU are on my cognitive and educational portal (CEP)</h1>
+  	<header class="header">
+		<h2>Hi there!</h2>
+		<h2>YOU are on my cognitive and educational portal (CEP)</h2>
+  	</header>
 	
-	<div id='common_text'>
+	<div id='common_text' class="container">
+		<?php require($_SERVER[DOCUMENT_ROOT].'/php/meny.php');?>
+		<nav id="primary_nav_wrap">
+			<ul>
+				<li class="current-menu-item"><a href="#">Home</a></li>
+				<li><a href="pages/testAutomation.html" id='testAutomation'>Test automation</a>
+					<ul>
+						<li><a href="pages/testautomation/ui.html">UI</a></li>
+						<li><a href="pages/testautomation/mobile.html">Mobile</a></li>
+						<li><a href="pages/testautomation/api.html">API</a></li>
+						<li><a href="#">Tools</a>
+							<ul>
+								<li><a href="#">Build tools</a>
+									<ul>
+										<li><a href="pages/testautomation/tools/buildtools/maven.html">Maven</a></li>
+										<li><a href="pages/testautomation/tools/buildtools/gradle.html">Gradle</a></li>
+										<li><a href="pages/testautomation/tools/buildtools/ant.html">Ant</a></li>
+									</ul>
+								</li>
+								<li><a href="#">Assertion frameworks</a>
+									<ul>
+										<li><a href="pages/testautomation/tools/assertionframeworks/testng.html">TestNG</a></li>
+										<li><a href="pages/testautomation/tools/assertionframeworks/junit5.html">JUnit5</a></li>
+									</ul>
+								</li>
+								<li><a href="pages/testautomation/tools/lombok.html">Lombok</a></li>
+								<li><a href="pages/testautomation/tools/guice.html">Guice</a></li>
+								<li><a href="pages/testautomation/tools/cucumber.html">Cucumber</a></li>
+								<li><a href="pages/testautomation/tools/restassured.html">Rest-Assured</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Technologies</a>
+							<ul>
+								<li><a href="#">Java</a>
+									<ul>
+										<li><a href="pages/testautomation/tech/java/java8.html">Java8</a></li>
+										<li><a href="pages/testautomation/tech/java/java11.html">Java11</a></li>
+										<li><a href="pages/testautomation/tech/java/java17.html">Java17</a></li>
+									</ul>
+								</li>
+								<li><a href="pages/testautomation/tech/seleniumwebdriver.html">Selenium WebDriver</a></li>
+								<li><a href="pages/testautomation/tech/docker.html">Docker</a></li>
+								<li><a href="pages/testautomation/tech/jenkins.html">Jenkins</a></li>
+							</ul>
+						</li>
+						<li><a href="#">TestReports</a>
+							<ul>
+								<li><a href="pages/testautomation/testreports/rp.html">ReportPortal</a></li>
+								<li><a href="pages/testautomation/testreports/allure.html">Allure</a></li>
+								<li><a href="pages/testautomation/testreports/mavenreport.html">MavenReport</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li><a href="pages/tasks.html" id='tasks'>Tasks</a>
+					<ul>
+						<li><a href="pages/tasks/triangle.html">Triangle</a></li>
+						<li><a href="pages/tasks/loginForm.html">Login form</a></li>
+					</ul>
+				</li>
+				<li><a href="pages/education.html" id='education'>Education</a>
+					<ul>
+						<li class="dir"><a href="pages/education/automatedTestingInJava.html">Automated Testing in Java</a></li>
+						<li class="dir"><a href="pages/education/testingFundamentals.html">Testing Fundamentals</a>
+						<li class="dir"><a href="pages/education/oop.html">Object-oriented Programming</a>
+						<li class="dir"><a href="pages/education/apiTestAutomation.html">API Test Automation</a>
+					</ul>
+				</li>
+				<li><a href="pages/instructions.html" id='instructions'>Instructions</a>
+					<ul>
+						<li class="dir"><a href="pages/instructions/setUpJenkinsInDocker.html">Set up Jenkins in Docker</a></li>
+						<li class="dir"><a href="pages/instructions/setUpMobileTestingEnv.html">Set up mobile testing env</a></li>
+					</ul>
+				</li>
+				<li><a href="pages/visitka.html" id='aboutMe'>About me</a></li>
+			</ul>
+		</nav>
+		<br>
 		<p>And here you can find some information on test automation, and more specifically, what I encountered during my work.
 			I divided the material into several topics. I hope this will be useful to someone!</p>
-    
-		<ul> <!-- changed to list in the tutorial -->
-			<li><a href="pages/testAutomation.html" id='testAutomation'>Test automation</a></li>
-			<li><a href="pages/tasks.html" id='tasks'>Tasks</a></li>
-			<li><a href="pages/education.html" id='education'>Education</a></li>
-			<li><a href="pages/instructions.html" id='instructions'>Instructions</a></li>
-			<li><a href="pages/visitka.html" id='aboutMe'>About me</a></li>
-		</ul>
 
 	</div>
  
