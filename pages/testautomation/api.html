@@ -14,7 +14,59 @@
 </header>
 
 <div class="container">
-  <h1>Right now it's just a stub... but I'm working on it!</h1>
+  <div class="content_block">
+    <img src="../../images/testingPyramid.png" alt="Testing pyramid" class="image-medium-size"/>
+    <h1>REST API testing strategy</h1>
+    <p>The API layer of any application is the channel that connects the client to the server (or one microservice to another), manages business processes,
+      and exposes services that provide value to users. A client-facing public API that is made open to end users becomes a product in itself. If it breaks, it will put at risk
+      not only one application, but the whole chain of business processes built around it.
+    </p>
+  </div>
+
+  <h3>API testing steps</h3>
+    <ol>
+      <li><strong>Check if the HTTP status code is correct.</strong>
+        <p>For example, resource creation should return 201 CREATED and denied requests should return 403 FORBIDDEN, etc.</p></li>
+      <li><strong>Check the response payload.</strong>
+        <p>Check the correctness of the JSON body, names, types, and values ​​of the response fields,
+        including in responses to erroneous requests.</p></li>
+      <li><strong>Check the response headers.</strong>
+        <p>HTTP server headers affect both security and performance.</p></li>
+      <li><strong>Check if the application state is correct.</strong>
+        <p>This is optional and applies mainly to manual testing or when the user interface
+        or other interface can be easily tested.</p></li>
+      <li><strong>Check basic functionality.</strong>
+        <p>If the operation completed successfully, but took an unreasonably long time, the test failed.</p></li>
+    </ol>
+  <p>
+
+  </p>
+  <h3>Categories of Test Cases</h3>
+  <p>Our test cases are divided into the following general groups of test scenarios:</p>
+  <ul>
+    <li>Major positive tests (passing a successful scenario by default)</li>
+    <li>Extended positive testing with additional parameters</li>
+    <li>Negative testing with valid inputs</li>
+    <li>Negative testing with invalid inputs</li>
+    <li>Destructive testing</li>
+    <li>Security, authorization and accessibility tests</li>
+  </ul>
+
+  <div>
+    <h3>API as a convention</h3>
+    <p>An API is essentially an agreement between a client and a server, or between two applications. This can be done by first checking the specification (or the service
+        convention itself, such as the Swagger interface or an OpenAPI reference) and making sure that:</p>
+    <ul>
+      <li>endpoints are correctly named;</li>
+      <li>resources and their types correctly reflect the object model;</li>
+      <li>no missing or duplicate functionality;</li>
+      <li>relationships between resources are correctly reflected in the API.</li>
+    </ul>
+  </div>
+
+
+
+
   <a href="../../index.html" class='backHomeBtn'>Back home</a>
 </div>
 
