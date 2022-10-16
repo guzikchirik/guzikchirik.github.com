@@ -1,0 +1,74 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+.header {
+  width: 100%;
+  padding: 15px 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 24px;
+  font-weight: 300;
+  color: gray;
+}
+
+.container {
+  max-width: 1230px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+div.form
+{
+    display: block;
+    text-align: center;
+}
+
+form {
+  width: 50%;
+  display: inline-block;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: left;
+  }
+
+.section_name_lbl {
+  margin: auto 150px;
+}
+
+.section{
+  margin: 15px;
+}
+
+.field_value{
+  margin: 5px;
+}
+
+.input-error {
+  border: 1px solid red;
+  border-radius: 3px;
+}
+
+
+label{
+    display: inline-block;
+   /* float: left;
+    clear: left;
+    width: 150px;
+    text-align: right;
+}*/
+}
+
+input {
+  display: inline-block;
+  float: left;
+}

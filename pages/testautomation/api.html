@@ -64,12 +64,87 @@
     </ul>
   </div>
 
-
+  <div>
+    <h3>API Example and Test Matrix</h3>
+    <h4>API example</h4>
+    <ul class="responsive-table">
+      <li class="table-header">
+        <div class="col col-1">API</div>
+        <div class="col col-2">Action</div>
+      </li>
+      <li class="table-row">
+        <div class="col col-1" data-label="API">GET /users</div>
+        <div class="col col-2" data-label="Action">View all users</div>
+      </li>
+      <li class="table-row">
+        <div class="col col-1" data-label="API">GET /users?name={username}</div>
+        <div class="col col-2" data-label="Action">Get user by username</div>
+      </li>
+      <li class="table-row">
+        <div class="col col-1" data-label="API">GET /users/{id}</div>
+        <div class="col col-2" data-label="Action">Get user by ID</div>
+      </li>
+      <li class="table-row">
+        <div class="col col-1" data-label="API">GET /users/{id}/configurations</div>
+        <div class="col col-2" data-label="Action">Get all configurations for a user</div>
+      </li>
+      <li class="table-row">
+        <div class="col col-1" data-label="API">POST /users/{id}/configurations</div>
+        <div class="col col-2" data-label="Action">Create a new configuration for a user</div>
+      </li>
+      <li class="table-row">
+        <div class="col col-1" data-label="API">DELETE /users/{id}/configurations/{id}</div>
+        <div class="col col-2" data-label="Action">Delete configuration for a user</div>
+      </li>
+      <li class="table-row">
+        <div class="col col-1" data-label="API">PATCH /users/{id}/configuration/{id}</div>
+        <div class="col col-2" data-label="Action">Update configuration for user</div>
+      </li>
+    </ul>
+  </div>
+  <div>
+    <h4>Test matrix</h4>
+    <h4>Positive tests</h4>
+    <ol>
+      <li>Make an API call with valid required parameters
+        <ul>
+          <li>Check status code
+            <ul>
+              <li>All requests must return a 2xx HTTP status code</li>
+              <li>Status code returned as per specification</li>
+            </ul>
+          </li>
+          <li>Check response loading
+            <ul>
+              <li>The response is a well-formed JSON object</li>
+              <li>Response structure matches the data model</li>
+            </ul>
+          </li>
+          <li>Check status
+            <ul>
+              <li>For GET requests make sure that the system has NOT changed the state</li>
+              <li>For other operations make sure the action was performed</li>
+            </ul>
+          </li>
+          <li>Check headers
+            <ul>
+              <li></li>
+              <li></li>
+            </ul>
+          </li></li>
+          <li>Check performance
+            <ul>
+              <li></li>
+              <li></li>
+            </ul>
+          </li></li>
+        </ul>
+      </li>
+    </ol>
+  </div>
 
 
   <a href="../../index.html" class='backHomeBtn'>Back home</a>
 </div>
-
-<script defer src="scripts/main.js"></script>
 </body>
 </html>
