@@ -77,83 +77,214 @@
 
     <div>
       <h3>API Example and Test Matrix</h3>
-      <h4>API example</h4>
-      <ul class="responsive-table">
-        <li class="table-header">
-          <div class="col col-1">API</div>
-          <div class="col col-2">Action</div>
-        </li>
-        <li class="table-row">
-          <div class="col col-1" data-label="API">GET /users</div>
-          <div class="col col-2" data-label="Action">View all users</div>
-        </li>
-        <li class="table-row">
-          <div class="col col-1" data-label="API">GET /users?name={username}</div>
-          <div class="col col-2" data-label="Action">Get user by username</div>
-        </li>
-        <li class="table-row">
-          <div class="col col-1" data-label="API">GET /users/{id}</div>
-          <div class="col col-2" data-label="Action">Get user by ID</div>
-        </li>
-        <li class="table-row">
-          <div class="col col-1" data-label="API">GET /users/{id}/configurations</div>
-          <div class="col col-2" data-label="Action">Get all configurations for a user</div>
-        </li>
-        <li class="table-row">
-          <div class="col col-1" data-label="API">POST /users/{id}/configurations</div>
-          <div class="col col-2" data-label="Action">Create a new configuration for a user</div>
-        </li>
-        <li class="table-row">
-          <div class="col col-1" data-label="API">DELETE /users/{id}/configurations/{id}</div>
-          <div class="col col-2" data-label="Action">Delete configuration for a user</div>
-        </li>
-        <li class="table-row">
-          <div class="col col-1" data-label="API">PATCH /users/{id}/configuration/{id}</div>
-          <div class="col col-2" data-label="Action">Update configuration for user</div>
-        </li>
-      </ul>
+      <h3>API example</h4>
+        <ul class="responsive-table">
+          <li class="table-header">
+            <div class="col col-1">API</div>
+            <div class="col col-2">Action</div>
+          </li>
+          <li class="table-row">
+            <div class="col col-1" data-label="API">GET /users</div>
+            <div class="col col-2" data-label="Action">View all users</div>
+          </li>
+          <li class="table-row">
+            <div class="col col-1" data-label="API">GET /users?name={username}</div>
+            <div class="col col-2" data-label="Action">Get user by username</div>
+          </li>
+          <li class="table-row">
+            <div class="col col-1" data-label="API">GET /users/{id}</div>
+            <div class="col col-2" data-label="Action">Get user by ID</div>
+          </li>
+          <li class="table-row">
+            <div class="col col-1" data-label="API">GET /users/{id}/configurations</div>
+            <div class="col col-2" data-label="Action">Get all configurations for a user</div>
+          </li>
+          <li class="table-row">
+            <div class="col col-1" data-label="API">POST /users/{id}/configurations</div>
+            <div class="col col-2" data-label="Action">Create a new configuration for a user</div>
+          </li>
+          <li class="table-row">
+            <div class="col col-1" data-label="API">DELETE /users/{id}/configurations/{id}</div>
+            <div class="col col-2" data-label="Action">Delete configuration for a user</div>
+          </li>
+          <li class="table-row">
+            <div class="col col-1" data-label="API">PATCH /users/{id}/configuration/{id}</div>
+            <div class="col col-2" data-label="Action">Update configuration for user</div>
+          </li>
+        </ul>
     </div>
     <div>
-      <h4>Test matrix</h4>
-      <h4>Positive tests</h4>
-      <ol>
-        <li>Make an API call with valid required parameters
-          <ul>
-            <li>Check status code
-              <ul>
-                <li>All requests must return a 2xx HTTP status code</li>
-                <li>Status code returned as per specification</li>
-              </ul>
-            </li>
-            <li>Check response loading
-              <ul>
-                <li>The response is a well-formed JSON object</li>
-                <li>Response structure matches the data model</li>
-              </ul>
-            </li>
-            <li>Check status
-              <ul>
-                <li>For GET requests make sure that the system has NOT changed the state</li>
-                <li>For other operations make sure the action was performed</li>
-              </ul>
-            </li>
-            <li>Check headers
-              <ul>
-                <li></li>
-                <li></li>
-              </ul>
-            </li>
-        </li>
-        <li>Check performance
-          <ul>
-            <li></li>
-            <li></li>
-          </ul>
-        </li>
-        </li>
+      <h3>Test matrix:</h4>
+        <h4>1. Positive tests</h4>
+        <p>Make an API call with valid required parameters</p>
+        <ul>
+          <li>Check status code
+            <ul>
+              <li>All requests must return a 2xx HTTP status code</li>
+              <li>Status code returned as per specification</li>
+            </ul>
+          </li>
+          <li>Check response loading
+            <ul>
+              <li>The response is a well-formed JSON object</li>
+              <li>Response structure matches the data model</li>
+            </ul>
+          </li>
+          <li>Check status
+            <ul>
+              <li>For GET requests make sure that the system has NOT changed the state</li>
+              <li>For other operations make sure the action was performed</li>
+            </ul>
+          </li>
+          <li>Check headers
+            <ul>
+              <li>Make sure the HTTP headers match the expectations from the spec(content-type, connection,
+                cashe-control and etc.)</li>
+              <li>Make sure the information is not leaked (for example, headers like 'X-Powered-by',
+                'X-AspNet-Version' are not sent to the user)</li>
+            </ul>
+          </li>
+          <li>Check performance
+            <ul>
+              <li>Response received in a timely manner - as defined in the test plan</li>
+            </ul>
+          </li>
         </ul>
-        </li>
-      </ol>
+
+        <h4>2. Positive tests + optional test parameters</h4>
+        <p>Make an API call with valid required parameters and valid Not required parameters</p>
+        <ul>
+          <li>Check status code
+            <ul>
+              <li>Check the same as in point 1</li>
+            </ul>
+          </li>
+          <li>Check response loading
+            <ul>
+              <li>The same as in point #1</li>
+              <li>FILTERING: the response is filtered according to the specified value in the parameters</li>
+              <li>SORTING: sorted according to the specified field and the correct sorting direction</li>
+              <li>LIMITING: the data set is limited by the specified limit</li>
+              <li>Also worth checking combinations of all optional fields</li>
+            </ul>
+          </li>
+          <li>Check status
+            <ul>
+              <li>The same as in point #1</li>
+            </ul>
+          </li>
+          <li>Check headers
+            <ul>
+              <li>The same as in point #1</li>
+            </ul>
+          </li>
+          <li>Check performance
+            <ul>
+              <li>The same as in point #1</li>
+            </ul>
+          </li>
+        </ul>
+
+        <h4>3. Negative testing - VALID data entry</h4>
+        <p>Making API calls with valid inputs but which attempt to perform illegal operations. Exs.: <br> 
+          - attempt to create a resource with an already existing name<br>
+          - attempt to delete a resource that no longer exists<br>
+          - attempted illegal operation (for example, deleting a user's configuration without permission)<br>
+          - and so on and so forth...
+        </p>
+        <ul>
+          <li>Check status code
+            <ul>
+              <li>Make sure the wrong status code is sent (not 2xx)</li>
+              <li>Make sure the status code matches the type of error as specified in the spec</li>
+            </ul>
+          </li>
+          <li>Check response loading
+            <ul>
+              <li>Make sure you got the response in error</li>
+              <li>Make sure the error format is like in the spec</li>
+              <li>Make sure the error description is correct for this condition</li>
+            </ul>
+          </li>
+          <li>Check headers
+            <ul>
+              <li>The same as in point #1</li>
+            </ul>
+          </li>
+          <li>Check performance
+            <ul>
+              <li>Make sure the error is received in a timely manner</li>
+            </ul>
+          </li>
+        </ul>
+
+        <h4>4. Negative testing - INVALID data entry</h4>
+        <p>Making API call with invalid input. Exs.: <br> 
+          - missing authorization token<br>
+          - missing required parameters<br>
+          - invalid values for endpoints (invalid UUID , loading with invalid model, etc.)<br>
+          - unsupported methods for endpoints<br>
+          - and so on and so forth...
+        </p>
+        <ul>
+          <li>Check status code
+            <ul>
+              <li>The same as in point #3</li>
+            </ul>
+          </li>
+          <li>Check response loading
+            <ul>
+              <li>The same as in point #3</li>
+            </ul>
+          </li>
+          <li>Check headers
+            <ul>
+              <li>The same as in point #3</li>
+            </ul>
+          </li>
+          <li>Check performance
+            <ul>
+              <li>The same as in point #3</li>
+            </ul>
+          </li>
+        </ul>
+
+        <h4>5. Destructive testing</h4>
+        <p>Intentionally try to disable API to test its reliability. Exs.: <br>
+          - invalid content in the request<br>
+          - content with the wrong structure<br>
+          - overflow of parameter values (header over 200 characters, huge JSON in the request body, etc.)<br>
+          - limit value check<br>
+          - empty payload<br>
+          - invalid characters in options or boot data<br>
+          - using incorrect headers<br>
+          - concurrent API calls<br>
+          - and so on and so forth...
+        </p>
+        <ul>
+          <li>Check status code
+            <ul>
+              <li>The same as in point #3. API should correctly report the failure</li>
+            </ul>
+          </li>
+          <li>Check response loading
+            <ul>
+              <li>The same as in point #3. API should correctly report the failure</li>
+            </ul>
+          </li>
+          <li>Check headers
+            <ul>
+              <li>The same as in point #3. API should correctly report the failure</li>
+            </ul>
+          </li>
+          <li>Check performance
+            <ul>
+              <li>The same as in point #3. API should correctly report the failure</li>
+            </ul>
+          </li>
+        </ul>
+
+
     </div>
 
 
