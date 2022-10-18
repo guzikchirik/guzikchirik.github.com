@@ -50,6 +50,8 @@ form {
 }
 
 .field_value{
+  width:100%;
+  display:inline-block;
   margin: 5px;
 }
 
@@ -59,16 +61,12 @@ form {
 }
 
 
-label{
-    display: inline-block;
-   /* float: left;
-    clear: left;
-    width: 150px;
-    text-align: right;
-}*/
+label {
+    width:30%;
+    float:left;
 }
 
 input {
-  display: inline-block;
-  float: left;
+  width:70%;
+  float:right;
 }
