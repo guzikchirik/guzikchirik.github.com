@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <title>Triangle testing</title>
@@ -8,62 +9,69 @@
   <link rel="shortcut icon" type="image/x-icon" href="../../images/favicon.ico">
 </head>
 <!--<body onload="drawTriangle();"> for draw triangle-->
+
 <body>
-<div class="container">
+  <header class="header">
+    <img src="../../images/cognitiveAT.png" alt="cognitiveAT" class='main_header_logo'>
+    <h2>Portal for learning Automation testing</h2>
+  </header>
+  <div class="container">
 
-  <div class="sidebar">
-    <div id="fBugs" class="foundBugs">
-      <h2>Found Bugs:</h2>
-      <p id="bugsDesc"></p>
+    <div class="sidebar">
+      <div id="fBugs" class="foundBugs">
+        <h2>Found Bugs:</h2>
+        <p id="bugsDesc"></p>
 
+      </div>
+      <div id="exScen" class="execScenarios">
+        <h2>Executed scenarios:</h2>
+        <p id="scenariosDesc"></p>
+      </div>
     </div>
-    <div id="exScen" class="execScenarios" >
-      <h2>Executed scenarios:</h2>
-      <p id="scenariosDesc"></p>
-    </div>
-  </div>
 
-  <div class="left">
-    <div class="image-wrapper">
-      <img src="../../images/triangles/triangle-0.png" alt="The Firefox logo: a flaming fox surrounding the Earth." id = 'logo' class="triangle-icon">
-    </div>
+    <div class="left">
+      <div class="image-wrapper">
+        <img src="../../images/triangles/triangle-0.png" alt="The Firefox logo: a flaming fox surrounding the Earth."
+          id='logo' class="triangle-icon">
+      </div>
       <p>Triangle testing</p>
-      <p>You need to test a program that determines the type of a triangle from its three sides. Each side is specified in a separate text field.</p>
+      <p>You need to test a program that determines the type of a triangle from its three sides. Each side is specified
+        in a separate text field.</p>
 
-    <div class="triangleForm">
-      <label>sideA:</label>
+      <div class="triangleForm">
+        <label>sideA:</label>
         <input type="text" id="sideA" name="sideA">
-      <br>
-      <label>sideB:</label>
+        <br>
+        <label>sideB:</label>
         <input type="text" id="sideB" name="sideB">
-      <br>
-      <label>sideC:</label>
+        <br>
+        <label>sideC:</label>
         <input type="text" id="sideC" name="sideC">
-      <br>
+        <br>
         <button type="button" id="showBtn">Show</button>
 
 
-<!--    <div id="triangle" class="triangleShow">-->
-<!--      <canvas id="canvas" width="150" height="150"></canvas>-->
-<!--    </div>-->
+        <!--    <div id="triangle" class="triangleShow">-->
+        <!--      <canvas id="canvas" width="150" height="150"></canvas>-->
+        <!--    </div>-->
+      </div>
+
+
+      <div class="message">
+        <label>Message:</label>
+        <p id="msg"></p>
+      </div>
+
+      <a href="../tasks.html" class='backBtn'>Back</a>
+      <a href="../../index.html" class='backHomeBtn'>Back home</a>
     </div>
 
 
-    <div class="message">
-      <label>Message:</label>
-      <p id="msg"></p>
-    </div>
-
-    <a href="../tasks.html" class='backBtn'>Back</a>
-    <a href="../../index.html" class='backHomeBtn'>Back home</a>
   </div>
 
 
-</div>
-
-
-<script defer src="../../scripts/triangle.js"></script>
+  <script defer src="../../scripts/triangle.js"></script>
 
 </body>
-</html>
 
+</html>

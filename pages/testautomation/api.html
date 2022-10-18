@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/html">
+
 <head>
   <meta charset="utf-8">
   <title>API</title>
@@ -7,144 +8,157 @@
   <link href="../../styles/style.css" rel="stylesheet" type="text/css">
   <link rel="shortcut icon" type="image/x-icon" href="./images/favicon.ico">
 </head>
+
 <body>
-<header class="header">
-  <h2>Hi there!</h2>
-  <h2>YOU are on my cognitive and educational portal (CEP)</h2>
-</header>
+  <header class="header">
+    <img src="../../images/cognitiveAT.png" alt="cognitiveAT" class='main_header_logo'>
+    <h2>Portal for learning Automation testing</h2>
+  </header>
 
-<div class="container">
-  <div class="content_block">
-    <img src="../../images/testingPyramid.png" alt="Testing pyramid" class="image-medium-size"/>
-    <h1>REST API testing strategy</h1>
-    <p>The API layer of any application is the channel that connects the client to the server (or one microservice to another), manages business processes,
-      and exposes services that provide value to users. A client-facing public API that is made open to end users becomes a product in itself. If it breaks, it will put at risk
-      not only one application, but the whole chain of business processes built around it.
-    </p>
-  </div>
+  <div class="container">
+    <div class="content_block">
+      <img src="../../images/testingPyramid.png" alt="Testing pyramid" class="image-medium-size" />
+      <h1>REST API testing strategy</h1>
+      <p>The API layer of any application is the channel that connects the client to the server (or one microservice to
+        another), manages business processes,
+        and exposes services that provide value to users. A client-facing public API that is made open to end users
+        becomes a product in itself. If it breaks, it will put at risk
+        not only one application, but the whole chain of business processes built around it.
+      </p>
+    </div>
 
-  <h3>API testing steps</h3>
+    <h3>API testing steps</h3>
     <ol>
       <li><strong>Check if the HTTP status code is correct.</strong>
-        <p>For example, resource creation should return 201 CREATED and denied requests should return 403 FORBIDDEN, etc.</p></li>
+        <p>For example, resource creation should return 201 CREATED and denied requests should return 403 FORBIDDEN,
+          etc.</p>
+      </li>
       <li><strong>Check the response payload.</strong>
         <p>Check the correctness of the JSON body, names, types, and values ​​of the response fields,
-        including in responses to erroneous requests.</p></li>
+          including in responses to erroneous requests.</p>
+      </li>
       <li><strong>Check the response headers.</strong>
-        <p>HTTP server headers affect both security and performance.</p></li>
+        <p>HTTP server headers affect both security and performance.</p>
+      </li>
       <li><strong>Check if the application state is correct.</strong>
         <p>This is optional and applies mainly to manual testing or when the user interface
-        or other interface can be easily tested.</p></li>
+          or other interface can be easily tested.</p>
+      </li>
       <li><strong>Check basic functionality.</strong>
-        <p>If the operation completed successfully, but took an unreasonably long time, the test failed.</p></li>
+        <p>If the operation completed successfully, but took an unreasonably long time, the test failed.</p>
+      </li>
     </ol>
-  <p>
+    <p>
 
-  </p>
-  <h3>Categories of Test Cases</h3>
-  <p>Our test cases are divided into the following general groups of test scenarios:</p>
-  <ul>
-    <li>Major positive tests (passing a successful scenario by default)</li>
-    <li>Extended positive testing with additional parameters</li>
-    <li>Negative testing with valid inputs</li>
-    <li>Negative testing with invalid inputs</li>
-    <li>Destructive testing</li>
-    <li>Security, authorization and accessibility tests</li>
-  </ul>
-
-  <div>
-    <h3>API as a convention</h3>
-    <p>An API is essentially an agreement between a client and a server, or between two applications. This can be done by first checking the specification (or the service
-        convention itself, such as the Swagger interface or an OpenAPI reference) and making sure that:</p>
+    </p>
+    <h3>Categories of Test Cases</h3>
+    <p>Our test cases are divided into the following general groups of test scenarios:</p>
     <ul>
-      <li>endpoints are correctly named;</li>
-      <li>resources and their types correctly reflect the object model;</li>
-      <li>no missing or duplicate functionality;</li>
-      <li>relationships between resources are correctly reflected in the API.</li>
+      <li>Major positive tests (passing a successful scenario by default)</li>
+      <li>Extended positive testing with additional parameters</li>
+      <li>Negative testing with valid inputs</li>
+      <li>Negative testing with invalid inputs</li>
+      <li>Destructive testing</li>
+      <li>Security, authorization and accessibility tests</li>
     </ul>
-  </div>
 
-  <div>
-    <h3>API Example and Test Matrix</h3>
-    <h4>API example</h4>
-    <ul class="responsive-table">
-      <li class="table-header">
-        <div class="col col-1">API</div>
-        <div class="col col-2">Action</div>
-      </li>
-      <li class="table-row">
-        <div class="col col-1" data-label="API">GET /users</div>
-        <div class="col col-2" data-label="Action">View all users</div>
-      </li>
-      <li class="table-row">
-        <div class="col col-1" data-label="API">GET /users?name={username}</div>
-        <div class="col col-2" data-label="Action">Get user by username</div>
-      </li>
-      <li class="table-row">
-        <div class="col col-1" data-label="API">GET /users/{id}</div>
-        <div class="col col-2" data-label="Action">Get user by ID</div>
-      </li>
-      <li class="table-row">
-        <div class="col col-1" data-label="API">GET /users/{id}/configurations</div>
-        <div class="col col-2" data-label="Action">Get all configurations for a user</div>
-      </li>
-      <li class="table-row">
-        <div class="col col-1" data-label="API">POST /users/{id}/configurations</div>
-        <div class="col col-2" data-label="Action">Create a new configuration for a user</div>
-      </li>
-      <li class="table-row">
-        <div class="col col-1" data-label="API">DELETE /users/{id}/configurations/{id}</div>
-        <div class="col col-2" data-label="Action">Delete configuration for a user</div>
-      </li>
-      <li class="table-row">
-        <div class="col col-1" data-label="API">PATCH /users/{id}/configuration/{id}</div>
-        <div class="col col-2" data-label="Action">Update configuration for user</div>
-      </li>
-    </ul>
-  </div>
-  <div>
-    <h4>Test matrix</h4>
-    <h4>Positive tests</h4>
-    <ol>
-      <li>Make an API call with valid required parameters
-        <ul>
-          <li>Check status code
-            <ul>
-              <li>All requests must return a 2xx HTTP status code</li>
-              <li>Status code returned as per specification</li>
-            </ul>
-          </li>
-          <li>Check response loading
-            <ul>
-              <li>The response is a well-formed JSON object</li>
-              <li>Response structure matches the data model</li>
-            </ul>
-          </li>
-          <li>Check status
-            <ul>
-              <li>For GET requests make sure that the system has NOT changed the state</li>
-              <li>For other operations make sure the action was performed</li>
-            </ul>
-          </li>
-          <li>Check headers
-            <ul>
-              <li></li>
-              <li></li>
-            </ul>
-          </li></li>
-          <li>Check performance
-            <ul>
-              <li></li>
-              <li></li>
-            </ul>
-          </li></li>
+    <div>
+      <h3>API as a convention</h3>
+      <p>An API is essentially an agreement between a client and a server, or between two applications. This can be done
+        by first checking the specification (or the service
+        convention itself, such as the Swagger interface or an OpenAPI reference) and making sure that:</p>
+      <ul>
+        <li>endpoints are correctly named;</li>
+        <li>resources and their types correctly reflect the object model;</li>
+        <li>no missing or duplicate functionality;</li>
+        <li>relationships between resources are correctly reflected in the API.</li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>API Example and Test Matrix</h3>
+      <h4>API example</h4>
+      <ul class="responsive-table">
+        <li class="table-header">
+          <div class="col col-1">API</div>
+          <div class="col col-2">Action</div>
+        </li>
+        <li class="table-row">
+          <div class="col col-1" data-label="API">GET /users</div>
+          <div class="col col-2" data-label="Action">View all users</div>
+        </li>
+        <li class="table-row">
+          <div class="col col-1" data-label="API">GET /users?name={username}</div>
+          <div class="col col-2" data-label="Action">Get user by username</div>
+        </li>
+        <li class="table-row">
+          <div class="col col-1" data-label="API">GET /users/{id}</div>
+          <div class="col col-2" data-label="Action">Get user by ID</div>
+        </li>
+        <li class="table-row">
+          <div class="col col-1" data-label="API">GET /users/{id}/configurations</div>
+          <div class="col col-2" data-label="Action">Get all configurations for a user</div>
+        </li>
+        <li class="table-row">
+          <div class="col col-1" data-label="API">POST /users/{id}/configurations</div>
+          <div class="col col-2" data-label="Action">Create a new configuration for a user</div>
+        </li>
+        <li class="table-row">
+          <div class="col col-1" data-label="API">DELETE /users/{id}/configurations/{id}</div>
+          <div class="col col-2" data-label="Action">Delete configuration for a user</div>
+        </li>
+        <li class="table-row">
+          <div class="col col-1" data-label="API">PATCH /users/{id}/configuration/{id}</div>
+          <div class="col col-2" data-label="Action">Update configuration for user</div>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <h4>Test matrix</h4>
+      <h4>Positive tests</h4>
+      <ol>
+        <li>Make an API call with valid required parameters
+          <ul>
+            <li>Check status code
+              <ul>
+                <li>All requests must return a 2xx HTTP status code</li>
+                <li>Status code returned as per specification</li>
+              </ul>
+            </li>
+            <li>Check response loading
+              <ul>
+                <li>The response is a well-formed JSON object</li>
+                <li>Response structure matches the data model</li>
+              </ul>
+            </li>
+            <li>Check status
+              <ul>
+                <li>For GET requests make sure that the system has NOT changed the state</li>
+                <li>For other operations make sure the action was performed</li>
+              </ul>
+            </li>
+            <li>Check headers
+              <ul>
+                <li></li>
+                <li></li>
+              </ul>
+            </li>
+        </li>
+        <li>Check performance
+          <ul>
+            <li></li>
+            <li></li>
+          </ul>
+        </li>
+        </li>
         </ul>
-      </li>
-    </ol>
+        </li>
+      </ol>
+    </div>
+
+
+    <a href="../../index.html" class='backHomeBtn'>Back home</a>
   </div>
-
-
-  <a href="../../index.html" class='backHomeBtn'>Back home</a>
-</div>
 </body>
+
 </html>

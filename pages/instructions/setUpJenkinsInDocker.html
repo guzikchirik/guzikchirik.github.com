@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Set up Jenkins in Docker</title>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <link href="../../styles/style.css" rel="stylesheet" type="text/css">
-	<link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico">	
-  </head>
-  <body>
-    <div class="container">
-      <h1>Set up Jenkins in Docker</h1>
+
+<head>
+  <meta charset="utf-8">
+  <title>Set up Jenkins in Docker</title>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <link href="../../styles/style.css" rel="stylesheet" type="text/css">
+  <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico">
+</head>
+
+<body>
+  <header class="header">
+    <img src="../../images/cognitiveAT.png" alt="cognitiveAT" class='main_header_logo'>
+    <h2>Portal for learning Automation testing</h2>
+  </header>
+  <div class="container">
+    <h1>Set up Jenkins in Docker</h1>
 
     <code>
       docker network create jenkins<br>
@@ -43,21 +49,23 @@
       jenkinsci/blueocean<br>
     </code>
 
-      <p>Since this is Docker, to get to this path, you need to go into a moving container:</p>
+    <p>Since this is Docker, to get to this path, you need to go into a moving container:</p>
 
-      <li>1.	sudo docker exec -it 9e169611c39e /bin/bash</li>
+    <li>1. sudo docker exec -it 9e169611c39e /bin/bash</li>
 
-      <p>After entering the container, we follow the path above. The container inside is limited, it is only built for Jenkins:
-        this means that there are no such familiar applications as nano and vim. Therefore, we will use the output command:</p>
+    <p>After entering the container, we follow the path above. The container inside is limited, it is only built for
+      Jenkins:
+      this means that there are no such familiar applications as nano and vim. Therefore, we will use the output
+      command:</p>
 
-      <li>2.	cat < /var/jenkins_home/secrets/initialAdminPassword</li>
+    <li>2. cat < /var/jenkins_home/secrets/initialAdminPassword</li>
 
-      <p>exit</p>
+        <p>exit</p>
 
-    <a href="../../index.html" class='backHomeBtn'>Back home</a>
+        <a href="../../index.html" class='backHomeBtn'>Back home</a>
 
-    </div>
+  </div>
 
-  </body>
+</body>
+
 </html>
-
