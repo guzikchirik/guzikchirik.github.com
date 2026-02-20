@@ -4,74 +4,111 @@
 <head>
   <meta charset="utf-8">
   <title>Triangle testing</title>
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
   <link href="../../styles/style2.css" rel="stylesheet" type="text/css">
   <link rel="shortcut icon" type="image/x-icon" href="../../images/favicon.ico">
 </head>
-<!--<body onload="drawTriangle();"> for draw triangle-->
 
 <body>
   <header class="header">
     <img src="../../images/cognitiveAT.png" alt="cognitiveAT" class='main_header_logo'>
-    <h2>Portal for learning Automation testing</h2>
+    <span>Portal for learning Automation testing</span>
   </header>
-  <div class="container">
 
-    <div class="sidebar">
-      <div id="fBugs" class="foundBugs">
-        <h2>Found Bugs:</h2>
-        <p id="bugsDesc"></p>
+  <div class="app-container">
+    <!-- LEFT PANEL -->
+    <div class="panel input-panel">
+      <h2 class="panel-title">Enter Known Values</h2>
 
+      <div class="field-group">
+        <label for="sideA">Side A (Adjacent)</label>
+        <input type="text" id="sideA" name="sideA" placeholder="e.g. 31">
       </div>
-      <div id="exScen" class="execScenarios">
-        <h2>Executed scenarios:</h2>
-        <p id="scenariosDesc"></p>
+      <div class="field-group">
+        <label for="sideB">Side B (Opposite)</label>
+        <input type="text" id="sideB" name="sideB" placeholder="e.g. 23">
+      </div>
+      <div class="field-group">
+        <label for="sideC">Side C (Hypotenuse)</label>
+        <input type="text" id="sideC" name="sideC" placeholder="e.g. 38.6">
+      </div>
+
+      <div class="btn-row">
+        <button type="button" id="showBtn" class="btn-calculate">Calculate</button>
+        <button type="button" id="clearBtn" class="btn-clear">Clear All</button>
+      </div>
+
+      <!-- Sidebar info moved under buttons -->
+      <div class="sidebar-info">
+        <div class="info-block">
+          <h3>Found Bugs:</h3>
+          <p id="bugsDesc"></p>
+        </div>
+        <div class="info-block">
+          <h3>Executed scenarios:</h3>
+          <p id="scenariosDesc"></p>
+        </div>
       </div>
     </div>
 
-    <div class="left">
-      <div class="image-wrapper">
-        <img src="../../images/triangles/triangle-0.png" alt="The Firefox logo: a flaming fox surrounding the Earth."
-          id='logo' class="triangle-icon">
-      </div>
-      <p>Triangle testing</p>
-      <p>You need to test a program that determines the type of a triangle from its three sides. Each side is specified
-        in a separate text field.</p>
-
-      <div class="triangleForm">
-        <label>sideA:</label>
-        <input type="text" id="sideA" name="sideA">
-        <br>
-        <label>sideB:</label>
-        <input type="text" id="sideB" name="sideB">
-        <br>
-        <label>sideC:</label>
-        <input type="text" id="sideC" name="sideC">
-        <br>
-        <button type="button" id="showBtn">Show</button>
-
-
-        <!--    <div id="triangle" class="triangleShow">-->
-        <!--      <canvas id="canvas" width="150" height="150"></canvas>-->
-        <!--    </div>-->
+    <!-- RIGHT PANEL -->
+    <div class="panel results-panel">
+      <div class="results-header">
+        <h2 class="panel-title">Results</h2>
+        <div class="dropdown-wrapper">
+          <select id="displayMode">
+            <option>Numbers Only</option>
+          </select>
+        </div>
       </div>
 
-
-      <div class="message">
-        <label>Message:</label>
-        <p id="msg"></p>
+      <!-- Triangle Canvas -->
+      <div class="triangle-display">
+        <canvas id="triangleCanvas" width="480" height="260"></canvas>
+        <div class="triangle-placeholder" id="trianglePlaceholder">
+          <img src="../../images/triangles/triangle-0.png" alt="triangle" id='logo' class="triangle-icon">
+        </div>
       </div>
 
-      <a href="../tasks.html" class='backBtn'>Back</a>
-      <a href="../../index.html" class='backHomeBtn'>Back home</a>
+      <!-- Result message -->
+      <p id="msg" class="result-msg"></p>
+
+      <!-- Result Cards -->
+      <div class="result-cards" id="resultCards">
+        <div class="card">
+          <span class="card-label">Side A</span>
+          <span class="card-value" id="cardA">—</span>
+        </div>
+        <div class="card">
+          <span class="card-label">Side B</span>
+          <span class="card-value" id="cardB">—</span>
+        </div>
+        <div class="card">
+          <span class="card-label">Side C</span>
+          <span class="card-value" id="cardC">—</span>
+        </div>
+        <div class="card">
+          <span class="card-label">Angle A</span>
+          <span class="card-value" id="cardAngleA">—</span>
+        </div>
+        <div class="card">
+          <span class="card-label">Angle B</span>
+          <span class="card-value" id="cardAngleB">—</span>
+        </div>
+        <div class="card">
+          <span class="card-label">Area</span>
+          <span class="card-value" id="cardArea">—</span>
+        </div>
+        <div class="card">
+          <span class="card-label">Perimeter</span>
+          <span class="card-value" id="cardPerimeter">—</span>
+        </div>
+      </div>
     </div>
-
-
   </div>
 
-
   <script defer src="../../scripts/triangle.js"></script>
-
+  <script defer src="ui-extras.js"></script>
 </body>
 
 </html>
